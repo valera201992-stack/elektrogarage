@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЭлектроГараж — автоэлектрика</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#111318;color:#f4f4f4;font-family:Arial,sans-serif;line-height:1.6}
+.container{width:92%;max-width:1100px;margin:auto}
+header{padding:20px 0;border-bottom:1px solid #333}
+.logo{font-size:24px;font-weight:bold}
+.logo span,h1 span,h3{color:#ff831f}
+nav{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+nav a{color:#ccc;text-decoration:none;margin-left:12px;font-size:14px}
+.hero{padding:85px 0;background:radial-gradient(ellipse at 80% 20%,#402719,#111318 65%)}
+h1{font-size:clamp(36px,6vw,62px);line-height:1.1}
+.hero p,.subtitle{color:#bbb;max-width:650px;font-size:18px}
+.btn{display:inline-block;background:#ff831f;color:#171717;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:bold;border:0;cursor:pointer}
+.secondary{background:transparent;border:1px solid #777;color:white;margin-left:10px}
+section{padding:65px 0}
+h2{font-size:32px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.item,.contact{background:#1d2028;border:1px solid #343741;border-radius:14px;padding:24px}
+.item p{color:#bbb}
+.highlight{background:#1d2028;padding:30px;border-radius:16px}
+details{background:#1d2028;margin:10px 0;padding:18px;border-radius:9px}
+summary{cursor:pointer;font-weight:bold}
+input,select,textarea{width:100%;padding:14px;margin:8px 0;background:#111318;border:1px solid #444;color:white;border-radius:8px;font:inherit}
+textarea{min-height:100px}
+footer{text-align:center;padding:30px;border-top:1px solid #333;color:#999}
+.whatsapp{position:fixed;right:18px;bottom:18px;background:#20bd63;color:white;padding:15px 20px;border-radius:35px;text-decoration:none;font-weight:bold}
+@media(max-width:600px){nav a{margin:0}.hero{padding:55px 0}}
+</style>
+</head>
+<body>
+<header><div class="container"><nav>
+<div class="logo">ЭЛЕКТРО<span>ГАРАЖ</span></div>
+<div><a href="#services">Услуги</a><a href="#about">О нас</a><a href="#contacts">Контакты</a></div>
+</nav></div></header>
+
+<main>
+<section class="hero"><div class="container">
+<p>АВТОМОБИЛЬНАЯ ЭЛЕКТРОНИКА</p>
+<h1>Технологии и знания<br>для твоего <span>автомобиля</span></h1>
+<p>Автоэлектрика, диагностика, автозвук, сигнализации и дополнительное оборудование. Всё об автомобильной электронике в одном месте.</p>
+<br><a class="btn" href="https://wa.me/79530996206">Написать в WhatsApp</a>
+<a class="btn secondary" href="#services">Наши направления</a>
+</div></section>
+
+<section id="services"><div class="container">
+<h2>Наши направления</h2>
+<p class="subtitle">Основные направления автомобильной электроники.</p>
+<div class="grid">
+<div class="item"><h3>Автоэлектрика с нуля</h3><p>Электрические цепи, проводка, питание и основы автомобильной электроники.</p></div>
+<div class="item"><h3>Диагностика автомобилей</h3><p>Поиск неисправностей и работа с диагностическим оборудованием.</p></div>
+<div class="item"><h3>Автозвук</h3><p>Акустика, усилители, сабвуферы и настройка звука.</p></div>
+<div class="item"><h3>Автосигнализация и безопасность</h3><p>Охранные системы, центральные замки и защита автомобиля.</p></div>
+<div class="item"><h3>Дополнительное оборудование</h3><p>Камеры, парктроники, освещение и электронные устройства.</p></div>
+<div class="item"><h3>Ремонт электронных блоков</h3><p>Устройство, диагностика и ремонт автомобильной электроники.</p></div>
+</div></div></section>
+
+<section id="about"><div class="container"><div class="highlight">
+<h2>ЭлектроГараж — территория знаний</h2>
+<p class="subtitle">Изучаем автомобильную электронику, делимся полезной информацией и помогаем находить решения технических задач.</p>
+<a class="btn" href="https://wa.me/79530996206">Связаться с нами</a>
+</div></div></section>
+
+<section><div class="container">
+<h2>Как начать сотрудничество</h2>
+<div class="grid">
+<div class="item"><h3>01. Заявка</h3><p>Расскажите о своей задаче.</p></div>
+<div class="item"><h3>02. Обсуждение</h3><p>Уточним детали и необходимые работы.</p></div>
+<div class="item"><h3>03. Решение</h3><p>Согласуем дальнейшие действия.</p></div>
+</div></div></section>
+
+<section><div class="container">
+<h2>Частые вопросы</h2>
+<details><summary>Какие направления представлены?</summary><p>Автоэлектрика, диагностика, автозвук, сигнализации и дополнительное оборудование.</p></details>
+<details><summary>Как связаться?</summary><p>Напишите нам в WhatsApp.</p></details>
+</div></section>
+
+<section id="contacts"><div class="container">
+<h2>Оставить заявку</h2>
+<p class="subtitle">Заполните форму, и сообщение откроется в WhatsApp.</p>
+<div class="contact"><form id="contactForm">
+<input id="name" placeholder="Ваше имя" required>
+<input id="workshop" placeholder="Название мастерской">
+<input id="city" placeholder="Ваш город">
+<select id="direction">
+<option value="">Выберите направление</option>
+<option>Автоэлектрика</option>
+<option>Диагностика автомобилей</option>
+<option>Автозвук</option>
+<option>Автосигнализация</option>
+<option>Дополнительное оборудование</option>
+<option>Ремонт электронных блоков</option>
+</select>
+<input id="contact" placeholder="Ваш телефон или контакт">
+<textarea id="message" placeholder="Расскажите о задаче"></textarea>
+<button class="btn" type="submit">Отправить заявку в WhatsApp</button>
+</form></div>
+</div></section>
+</main>
+
+<footer>© 2026 ЭлектроГараж. Автомобильная электроника.</footer>
+<a class="whatsapp" href="https://wa.me/79530996206">WhatsApp</a>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit',function(e){
+e.preventDefault();
+const fields=[
+'Имя: '+document.getElementById('name').value,
+'Мастерская: '+document.getElementById('workshop').value,
+'Город: '+document.getElementById('city').value,
+'Направление: '+document.getElementById('direction').value,
+'Контакт: '+document.getElementById('contact').value,
+'Задача: '+document.getElementById('message').value
+];
+const msg=encodeURIComponent('Заявка с сайта ЭлектроГараж\n\n'+fields.join('\n'));
+window.open('https://wa.me/79530996206?text='+msg,'_blank');
+});
+</script>
+</body>
+  </html>
+  
