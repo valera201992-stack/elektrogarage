@@ -1,127 +1,195 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ЭлектроГараж — автоэлектрика</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101720">
+<title>ЭлектроГараж — обучение автоэлектрике</title>
 <style>
+:root{--bg:#101720;--panel:#1b2835;--panel2:#243545;--line:#35495b;--text:#f1f5f9;--muted:#afbdca;--accent:#ffb84d;--green:#6ed6a0}
 *{box-sizing:border-box}
-body{margin:0;background:#111318;color:#f4f4f4;font-family:Arial,sans-serif;line-height:1.6}
-.container{width:92%;max-width:1100px;margin:auto}
-header{padding:20px 0;border-bottom:1px solid #333}
-.logo{font-size:24px;font-weight:bold}
-.logo span,h1 span,h3{color:#ff831f}
-nav{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
-nav a{color:#ccc;text-decoration:none;margin-left:12px;font-size:14px}
-.hero{padding:85px 0;background:radial-gradient(ellipse at 80% 20%,#402719,#111318 65%)}
-h1{font-size:clamp(36px,6vw,62px);line-height:1.1}
-.hero p,.subtitle{color:#bbb;max-width:650px;font-size:18px}
-.btn{display:inline-block;background:#ff831f;color:#171717;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:bold;border:0;cursor:pointer}
-.secondary{background:transparent;border:1px solid #777;color:white;margin-left:10px}
-section{padding:65px 0}
-h2{font-size:32px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.item,.contact{background:#1d2028;border:1px solid #343741;border-radius:14px;padding:24px}
-.item p{color:#bbb}
-.highlight{background:#1d2028;padding:30px;border-radius:16px}
-details{background:#1d2028;margin:10px 0;padding:18px;border-radius:9px}
-summary{cursor:pointer;font-weight:bold}
-input,select,textarea{width:100%;padding:14px;margin:8px 0;background:#111318;border:1px solid #444;color:white;border-radius:8px;font:inherit}
-textarea{min-height:100px}
-footer{text-align:center;padding:30px;border-top:1px solid #333;color:#999}
-.whatsapp{position:fixed;right:18px;bottom:18px;background:#20bd63;color:white;padding:15px 20px;border-radius:35px;text-decoration:none;font-weight:bold}
-@media(max-width:600px){nav a{margin:0}.hero{padding:55px 0}}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Arial,sans-serif}
+header{padding:22px 16px;background:linear-gradient(130deg,#20394c,#111923);border-bottom:1px solid var(--line)}
+.wrap{max-width:1000px;margin:auto}
+.brand{font-size:26px;font-weight:800}
+.brand span{color:var(--accent)}
+header p{color:var(--muted);margin:5px 0 0}
+main{max-width:1000px;margin:auto;padding:18px 15px 40px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+button{font:inherit;color:var(--text);background:var(--panel2);border:1px solid var(--line);padding:11px 14px;border-radius:11px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.active{background:#4a3821;border-color:var(--accent);color:#ffe0a9}
+.hero,.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin:12px 0}
+.hero{background:radial-gradient(ellipse at top right,#49361f,#1b2b39 65%)}
+h1{font-size:clamp(29px,6vw,44px);line-height:1.2;margin:10px 0}
+h2{font-size:25px;margin:5px 0 12px}
+h3{margin:4px 0 8px}
+p{margin:8px 0}
+.muted,small{color:var(--muted)}
+.tag{display:inline-block;padding:3px 9px;border-radius:20px;background:#493820;color:#ffdda9;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:12px}
+.tile{width:100%;text-align:left;min-height:145px;padding:17px;background:var(--panel)}
+.tile p{font-size:14px;color:var(--muted)}
+.symbol{font-size:26px}
+.primary{background:var(--accent);color:#17212b;border-color:var(--accent);font-weight:bold}
+.choice{display:block;width:100%;text-align:left;margin:9px 0}
+.back{margin:5px 5px 5px 0}
+input{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#101923;color:white;font:inherit;margin:8px 0}
+.notice{border-left:4px solid var(--accent);padding:10px 13px;background:#2c2b26;border-radius:7px;margin:14px 0}
+footer{text-align:center;color:var(--muted);padding:24px 12px;font-size:13px}
+li{margin:7px 0}
+@media(max-width:560px){main{padding:12px}header{padding:18px 14px}.hero,.card{padding:15px}nav button{padding:9px 10px;font-size:14px}}
 </style>
 </head>
 <body>
-<header><div class="container"><nav>
-<div class="logo">ЭЛЕКТРО<span>ГАРАЖ</span></div>
-<div><a href="#services">Услуги</a><a href="#about">О нас</a><a href="#contacts">Контакты</a></div>
-</nav></div></header>
-
+<header>
+ <div class="wrap">
+  <div class="brand">⚡ ЭЛЕКТРО<span>ГАРАЖ</span></div>
+  <p>Понятное обучение автомобильной электронике — от основ до диагностики</p>
+ </div>
+</header>
 <main>
-<section class="hero"><div class="container">
-<p>АВТОМОБИЛЬНАЯ ЭЛЕКТРОНИКА</p>
-<h1>Технологии и знания<br>для твоего <span>автомобиля</span></h1>
-<p>Автоэлектрика, диагностика, автозвук, сигнализации и дополнительное оборудование. Всё об автомобильной электронике в одном месте.</p>
-<br><a class="btn" href="https://wa.me/79530996206">Написать в WhatsApp</a>
-<a class="btn secondary" href="#services">Наши направления</a>
-</div></section>
-
-<section id="services"><div class="container">
-<h2>Наши направления</h2>
-<p class="subtitle">Основные направления автомобильной электроники.</p>
-<div class="grid">
-<div class="item"><h3>Автоэлектрика с нуля</h3><p>Электрические цепи, проводка, питание и основы автомобильной электроники.</p></div>
-<div class="item"><h3>Диагностика автомобилей</h3><p>Поиск неисправностей и работа с диагностическим оборудованием.</p></div>
-<div class="item"><h3>Автозвук</h3><p>Акустика, усилители, сабвуферы и настройка звука.</p></div>
-<div class="item"><h3>Автосигнализация и безопасность</h3><p>Охранные системы, центральные замки и защита автомобиля.</p></div>
-<div class="item"><h3>Дополнительное оборудование</h3><p>Камеры, парктроники, освещение и электронные устройства.</p></div>
-<div class="item"><h3>Ремонт электронных блоков</h3><p>Устройство, диагностика и ремонт автомобильной электроники.</p></div>
-</div></div></section>
-
-<section id="about"><div class="container"><div class="highlight">
-<h2>ЭлектроГараж — территория знаний</h2>
-<p class="subtitle">Изучаем автомобильную электронику, делимся полезной информацией и помогаем находить решения технических задач.</p>
-<a class="btn" href="https://wa.me/79530996206">Связаться с нами</a>
-</div></div></section>
-
-<section><div class="container">
-<h2>Как начать сотрудничество</h2>
-<div class="grid">
-<div class="item"><h3>01. Заявка</h3><p>Расскажите о своей задаче.</p></div>
-<div class="item"><h3>02. Обсуждение</h3><p>Уточним детали и необходимые работы.</p></div>
-<div class="item"><h3>03. Решение</h3><p>Согласуем дальнейшие действия.</p></div>
-</div></div></section>
-
-<section><div class="container">
-<h2>Частые вопросы</h2>
-<details><summary>Какие направления представлены?</summary><p>Автоэлектрика, диагностика, автозвук, сигнализации и дополнительное оборудование.</p></details>
-<details><summary>Как связаться?</summary><p>Напишите нам в WhatsApp.</p></details>
-</div></section>
-
-<section id="contacts"><div class="container">
-<h2>Оставить заявку</h2>
-<p class="subtitle">Заполните форму, и сообщение откроется в WhatsApp.</p>
-<div class="contact"><form id="contactForm">
-<input id="name" placeholder="Ваше имя" required>
-<input id="workshop" placeholder="Название мастерской">
-<input id="city" placeholder="Ваш город">
-<select id="direction">
-<option value="">Выберите направление</option>
-<option>Автоэлектрика</option>
-<option>Диагностика автомобилей</option>
-<option>Автозвук</option>
-<option>Автосигнализация</option>
-<option>Дополнительное оборудование</option>
-<option>Ремонт электронных блоков</option>
-</select>
-<input id="contact" placeholder="Ваш телефон или контакт">
-<textarea id="message" placeholder="Расскажите о задаче"></textarea>
-<button class="btn" type="submit">Отправить заявку в WhatsApp</button>
-</form></div>
-</div></section>
+<nav id="nav">
+ <button class="active" data-page="home">Главная</button>
+ <button data-page="basics">Автоэлектрика с нуля</button>
+ <button data-page="diagnostics">Диагностика</button>
+ <button data-page="audio">Автозвук</button>
+ <button data-page="security">Сигнализация</button>
+ <button data-page="equipment">Оборудование</button>
+ <button data-page="blocks">Электронные блоки</button>
+</nav>
+<section id="app"></section>
 </main>
-
-<footer>© 2026 ЭлектроГараж. Автомобильная электроника.</footer>
-<a class="whatsapp" href="https://wa.me/79530996206">WhatsApp</a>
-
+<footer>© 2026 ЭлектроГараж · Учебные материалы. Перед работой сверяйся со схемой и руководством именно своего автомобиля.</footer>
 <script>
-document.getElementById('contactForm').addEventListener('submit',function(e){
-e.preventDefault();
-const fields=[
-'Имя: '+document.getElementById('name').value,
-'Мастерская: '+document.getElementById('workshop').value,
-'Город: '+document.getElementById('city').value,
-'Направление: '+document.getElementById('direction').value,
-'Контакт: '+document.getElementById('contact').value,
-'Задача: '+document.getElementById('message').value
+const sections=[
+{id:"basics",icon:"📘",title:"Автоэлектрика с нуля",desc:"Основы электричества, мультиметр, предохранители, реле, проводка и чтение схем.",topics:["Напряжение, ток и сопротивление","Как пользоваться мультиметром","Предохранители и реле","Масса, обрыв и падение напряжения","Как читать электрические схемы"]},
+{id:"diagnostics",icon:"🔎",title:"Диагностика автомобилей",desc:"Последовательный поиск неисправностей без замены деталей наугад.",topics:["Стартер не крутит","Фары не работают или мерцают","Проверка аккумулятора и зарядки","Чтение кодов ошибок OBD-II","Поиск плохого контакта"]},
+{id:"audio",icon:"🔊",title:"Автозвук",desc:"Акустика, усилители, сабвуферы, питание и настройка звучания.",topics:["Выбор динамиков","Подключение усилителя","Питание и предохранитель усилителя","Сабвуфер и корпус","Настройка усиления и фильтров"]},
+{id:"security",icon:"🔐",title:"Автосигнализация и безопасность",desc:"Охранные системы, центральный замок и безопасный монтаж.",topics:["Из чего состоит сигнализация","Центральный замок и приводы","Датчики дверей и капота","Иммобилайзер","Правила безопасного монтажа"]},
+{id:"equipment",icon:"💡",title:"Дополнительное оборудование",desc:"Камеры, парктроники, видеорегистраторы, освещение и аксессуары.",topics:["Камера заднего вида","Парктроники","Видеорегистратор и питание","Дополнительное освещение","Поиск точки подключения"]},
+{id:"blocks",icon:"🧩",title:"Ремонт электронных блоков",desc:"Устройство электронных модулей, первичная проверка и поиск неисправностей.",topics:["Как устроен электронный блок","Питание и масса блока управления","Разъёмы и осмотр платы","Электронные компоненты","Когда нужен специалист по ремонту плат"]}
 ];
-const msg=encodeURIComponent('Заявка с сайта ЭлектроГараж\n\n'+fields.join('\n'));
-window.open('https://wa.me/79530996206?text='+msg,'_blank');
+
+const lessons=[
+{n:1,t:"Основы электричества",d:"Напряжение, ток и сопротивление",body:"Напряжение — разность электрических потенциалов. Ток — движение электрического заряда. Сопротивление ограничивает ток. Наличие напряжения без нагрузки ещё не гарантирует, что цепь способна провести необходимый ток.",steps:["Напряжение измеряется в вольтах (В).","Ток измеряется в амперах (А).","Сопротивление измеряется в омах (Ω).","Для работы цепи необходим замкнутый путь тока."]},
+{n:2,t:"Мультиметр",d:"Основные режимы и безопасные измерения",body:"Мультиметр помогает измерять напряжение, сопротивление и ток, а также проверять целостность цепей.",steps:["Напряжение измеряй параллельно цепи.","Сопротивление и прозвонку выполняй только на обесточенной цепи.","Перед измерением тока проверь гнездо щупа и предел прибора.","Не подключай мультиметр в режиме амперметра поперёк аккумулятора."]},
+{n:3,t:"Предохранители",d:"Как проверить защиту электрической цепи",body:"Предохранитель защищает проводку и оборудование от чрезмерного тока.",steps:["Найди нужный предохранитель по схеме автомобиля.","Проверь его визуально или мультиметром.","Замени только на предохранитель того же номинала.","Если новый снова перегорает — ищи короткое замыкание или перегрузку."]},
+{n:4,t:"Плохая масса",d:"Проверка соединений с кузовом",body:"Плохой контакт массы может вызывать тусклый свет, медленную прокрутку стартера и нестабильную работу электрооборудования.",steps:["Найди точку массы по электрической схеме.","Осмотри соединение на коррозию и ослабление.","Проверь падение напряжения под нагрузкой.","Сравни результат с нормативами производителя."]},
+{n:5,t:"Обрыв проводки",d:"Последовательный поиск неисправности",body:"Если питание не доходит до потребителя, проверяй цепь по участкам — от источника до устройства.",steps:["Изучи схему и найди путь питания.","Проверь предохранитель и наличие напряжения.","Осмотри разъёмы и провода.","Прозвонку выполняй только на обесточенной цепи, отключив чувствительную электронику."]},
+{n:6,t:"Автомобильное реле",d:"Катушка и силовые контакты",body:"Реле позволяет малым управляющим током включать более мощную нагрузку. Номера контактов нужно сверять с маркировкой конкретного реле.",steps:["85 и 86 обычно относятся к катушке.","30 обычно является силовым входом.","87 обычно является выходом при срабатывании.","У переключающего реле может быть контакт 87a. Щелчок реле не гарантирует исправность контактов."]},
+{n:7,t:"Падение напряжения",d:"Поиск слабого контакта под нагрузкой",body:"Измерение падения напряжения помогает найти сопротивление в проводах и соединениях.",steps:["Включи проверяемую нагрузку.","Измеряй напряжение между концами участка цепи.","Сравни результат с нормативом производителя.","Проверь соединения, кабель и контакты."]},
+{n:8,t:"Как читать электрические схемы",d:"Питание, масса, предохранитель и потребитель",body:"Начинай читать схему от источника питания к потребителю и затем к массе. Условные обозначения различаются у производителей — сверяй легенду схемы.",steps:["Найди источник питания.","Определи предохранитель и реле.","Проследи провод до потребителя.","Найди обратный путь к массе.","Проверь обозначения разъёмов и номера контактов."]},
+{n:9,t:"Система запуска двигателя",d:"Аккумулятор, управление стартером и силовая цепь",body:"Система запуска включает аккумулятор, силовые кабели, цепь управления и стартер.",steps:["Проверь состояние аккумулятора и клемм.","Уточни, слышен ли щелчок при запуске.","Проверь цепь управления по схеме.","Проверь силовые соединения и массу.","Не замыкай контакты стартера и не обходи блокировки запуска."]}
+];
+
+const diag=[
+{q:"Что именно не работает?",opts:["Одна фара","Обе фары","Фары мерцают","Стартер не крутит"],next:[1,2,3,4]},
+{q:"Одна фара не горит. Что проверяем сначала?",opts:["Лампу и её разъём","Питание на разъёме","Не уверен"],next:[5,6,7]},
+{q:"Обе фары не горят.",opts:["Предохранитель и общее питание","Общие соединения и массу","Не уверен"],next:[8,9,8]},
+{q:"Свет мерцает или меняет яркость.",opts:["Клеммы аккумулятора и массу","Разъём и лампу","Падение напряжения под нагрузкой"],next:[10,11,12]},
+{q:"Стартер не крутит. Что происходит?",opts:["Щёлкает или гаснет приборка","Полная тишина, приборка работает","Есть предупреждение иммобилайзера"],next:[13,14,15]},
+{result:"Если лампа неисправна, замени её на подходящую по типу и мощности. Если исправна — проверь питание, разъём и массу по схеме."},
+{result:"Проверь наличие питания на разъёме по схеме автомобиля. Не допускай короткого замыкания щупами."},
+{result:"Проверь лампу, разъём, питание и массу последовательно. Не меняй детали наугад."},
+{result:"Проверь предохранитель по схеме, питание до и после него, а также реле и управление, если они предусмотрены. Не ставь предохранитель большего номинала."},
+{result:"Проверь общие соединения, питание и массу. Даже если отказали обе лампы, сначала найди общую причину."},
+{result:"Осмотри клеммы аккумулятора, точки массы и разъёмы. Затем проверь падение напряжения под нагрузкой."},
+{result:"Осмотри разъём и лампу: окисление, ослабление контактов и следы нагрева."},
+{result:"Измерь падение напряжения на плюсовом и массовом участках при включённых фарах. Сравни с документацией автомобиля."},
+{result:"Начни с проверки аккумулятора и клемм. Если напряжение резко проседает при запуске, нужна проверка батареи под нагрузкой. Не замыкай контакты стартера."},
+{result:"Проверь положение селектора P/N для АКПП или педаль сцепления для МКПП, затем предохранители и цепь управления по схеме. Не обходи блокировки запуска."},
+{result:"Попробуй запасной ключ и сверь индикацию с руководством автомобиля. Не отключай и не обходи противоугонную систему."}
+];
+
+const app=document.getElementById("app");
+let page="home",diagStep=0;
+
+function setPage(p){
+ page=p;
+ document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===p));
+ render();
+ window.scrollTo(0,0);
+}
+
+document.getElementById("nav").addEventListener("click",e=>{
+ const b=e.target.closest("button[data-page]");
+ if(b)setPage(b.dataset.page);
 });
+
+function home(){
+ return `<div class="hero">
+ <span class="tag">ОБУЧЕНИЕ И ПРАКТИКА</span>
+ <h1>Разберись в автоэлектрике сам</h1>
+ <p>Изучай устройство электрических систем автомобиля, учись находить неисправности и понимать схемы.</p>
+ <button class="primary" onclick="setPage('basics')">Начать обучение</button>
+ </div>
+ <h2>Шесть направлений обучения</h2>
+ <div class="grid">${sections.map(s=>`<button class="tile" onclick="setPage('${s.id}')"><div class="symbol">${s.icon}</div><h3>${s.title}</h3><p>${s.desc}</p></button>`).join("")}</div>
+ <div class="card"><h2>Практическая диагностика</h2><p>Выбери неисправность и пройди последовательную проверку.</p><button class="primary" onclick="startDiag()">Запустить диагностику</button></div>`;
+}
+
+function sectionPage(id){
+ const s=sections.find(x=>x.id===id);
+ if(!s)return home();
+ let related=lessons.filter(l=>id==="basics"||id==="diagnostics"||(id==="blocks"&&l.n===1)||(id==="audio"&&l.n===2));
+ return `<button class="back" onclick="setPage('home')">← Главная</button>
+ <div class="hero"><span class="tag">НАПРАВЛЕНИЕ ОБУЧЕНИЯ</span><h1>${s.icon} ${s.title}</h1><p>${s.desc}</p></div>
+ <div class="card"><h2>Темы раздела</h2><ul>${s.topics.map(t=>`<li>${t}</li>`).join("")}</ul></div>
+ ${related.length?`<h2>Учебные уроки</h2><div class="grid">${related.map(l=>`<button class="tile" onclick="openLesson(${l.n})"><span class="tag">Урок ${l.n}</span><h3>${l.t}</h3><p>${l.d}</p></button>`).join("")}</div>`:""}
+ <div class="notice">Материалы этого направления будут расширяться. Перед подключением оборудования обязательно проверяй электрическую схему конкретного автомобиля.</div>`;
+}
+
+function lessonsPage(){
+ return `<button class="back" onclick="setPage('home')">← Главная</button>
+ <h1>Уроки автоэлектрики</h1>
+ <p class="muted">Базовый курс: девять уроков от электрических величин до системы запуска.</p>
+ <div class="grid">${lessons.map(l=>`<button class="tile" onclick="openLesson(${l.n})"><span class="tag">Урок ${l.n}</span><h3>${l.t}</h3><p>${l.d}</p></button>`).join("")}</div>`;
+}
+
+function openLesson(n){
+ const l=lessons.find(x=>x.n===n);
+ if(!l)return;
+ app.innerHTML=`<button class="back" onclick="setPage('basics')">← К урокам</button>
+ <div class="card"><span class="tag">УРОК ${l.n} ИЗ 9</span><h1>${l.t}</h1><p class="muted">${l.d}</p><p>${l.body}</p><h2>Главное по теме</h2><ol>${l.steps.map(x=>`<li>${x}</li>`).join("")}</ol>
+ <div class="notice">Важно: перед измерениями и ремонтом изучи руководство производителя. Не работай с цепями под напряжением, если не знаешь безопасную процедуру.</div>
+ ${l.n<9?`<button class="primary" onclick="openLesson(${l.n+1})">Следующий урок →</button>`:`<button class="primary" onclick="setPage('diagnostics')">Перейти к диагностике</button>`}
+ </div>`;
+ window.scrollTo(0,0);
+}
+
+function startDiag(){
+ page="diagnostics";
+ document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.page==="diagnostics"));
+ diagStep=0;
+ renderDiag();
+ window.scrollTo(0,0);
+}
+
+function renderDiag(){
+ const d=diag[diagStep];
+ if(!d){app.innerHTML="<div class='card'>Диагностика завершена.</div>";return;}
+ if(d.result){
+ app.innerHTML=`<button class="back" onclick="setPage('home')">← Главная</button>
+ <div class="card"><span class="tag">РЕЗУЛЬТАТ ДИАГНОСТИКИ</span><h1>Что проверить</h1><p>${d.result}</p><div class="notice">Это первичная ориентировочная проверка, а не окончательный диагноз. Если нет опыта, обратись к автоэлектрику.</div><button class="primary" onclick="startDiag()">Начать заново</button></div>`;
+ return;
+ }
+ app.innerHTML=`<button class="back" onclick="setPage('home')">← Главная</button>
+ <div class="card"><span class="tag">ШАГ ${diagStep+1}</span><h2>${d.q}</h2>
+ ${d.opts.map((o,i)=>`<button class="choice" onclick="choose(${d.next[i]})">${o} →</button>`).join("")}
+ </div>`;
+}
+
+function choose(n){diagStep=n;renderDiag();window.scrollTo(0,0);}
+
+function render(){
+ if(page==="home")app.innerHTML=home();
+ else if(page==="basics")app.innerHTML=lessonsPage();
+ else if(page==="diagnostics"){app.innerHTML=`<div class="hero"><h1>Диагностика автомобиля</h1><p>Выбери симптом и отвечай на вопросы по порядку.</p><button class="primary" onclick="startDiag()">Начать диагностику</button></div><div class="card"><h3>Популярные случаи</h3><p>Стартер не крутит · Не горят фары · Мерцает свет</p></div>`;}
+ else app.innerHTML=sectionPage(page);
+}
+
+render();
 </script>
 </body>
-  </html>
-  
+</html>
